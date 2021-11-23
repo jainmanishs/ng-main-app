@@ -7,3 +7,6 @@
 [submodule "projects/ng-app-three"]
 	path = projects/ng-app-three
 	url = https://github.com/csAjayNayak/ng-app-three.git
+[submodule "projects/ng-app-four"]
+	path = projects/ng-app-four
+	url = https://github.com/debabratapaulchowdhury/ng-app-four.git
