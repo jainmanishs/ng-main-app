@@ -1,27 +1,77 @@
-# MyApp
+# Run the project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+1. Clone the project 
+	``` git clone https://github.com/jainmanishs/ng-main-app.git ```
 
-## Development server
+2. Go to project Folder
+	``` cd  ng-main-app ```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+3. Then run following command to pull the sub-modules(projects)
+	``` git submodule update --init --recursive ```
 
-## Code scaffolding
+4. do 
+	``` npm i ```
+ 
+5. To run the main project  in the ng-main-app folder
+	``` ng s ```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+6. To run the specific sub project in the ng-main-app folder
+	``` ng s --project=ng-app-one ```
+ 
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Add New Project 
 
-## Running end-to-end tests
+1. To add new sub project create new git repository in github for that sub project
+2. Clone the new blank github repository  in some temp folder
+3. To Create new project first go to ng-main-app folder in cmd
+	``` cd ng-main-app folder ```
+    then, 
+	``` ng generate application <app-name> –-routing ```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+    Note: Make sure the github repository name must be same as <app-name>
 
-## Further help
+4. Cut all content of  ng-main-app/Projects/<app-name> and paste  to the temp folder/<app-name> and then delete the <app-name> folder from ng-main-app/Projects/<app-name>
+5. Now push the changes to newly created git repository (in step 1)
+6. In ng-main-app Project sync all the changes.
+7. Now in ng-main-app folder in cmd run the following command
+	 ```git submodule add <remote_url> <destination_folder>```
+	 Ex : ``` git submodule add https://github.com/debabratapaulchowdhury/ng-app-four.git projects/ng-app-four ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+8. Now commit and sync changes in the main repository i.e  ng-main-app repository 
+9. Injecting Sub Apps into Main application
+
+	-> In app.module.ts of newly created sub-application add code below export class AppModule{}
+
+		
+		const providers = []
+
+		@NgModule({})
+		export class <app-name>SharedModule{
+  		static forRoot(): ModuleWithProviders {
+    		return {
+      				ngModule: AppModule,
+      				providers: providers
+    			}
+  		}
+		}
+
+
+
+
+10. In app.module.ts  of the ng-main-app folder
+	add following in imports
+
+	``` <app-name>SharedModule.forRoot() ```
+
+10. Sync all the above changes
+
+
+
+## other commands 
+
+
+To update specific project/module git repository.  
+	 ```git submodule update --remote projects/ng-app-one```
