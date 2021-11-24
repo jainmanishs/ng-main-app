@@ -1,4 +1,4 @@
-************  Run the project ***************************************
+# Run the project
 
 1. Clone the project 
 	git clone https://github.com/jainmanishs/ng-main-app.git
@@ -22,7 +22,7 @@
 
 
 
-******************* Add New Project *******************************
+## Add New Project
 
 1. To add new sub project create new git repository in github for that sub project
 2. Clone the new blank github repository  in some temp folder
@@ -71,7 +71,7 @@
 
 
 
-******************** other commands *********************************
+## other commands
 
 
 To update specific project/module git repository.  
