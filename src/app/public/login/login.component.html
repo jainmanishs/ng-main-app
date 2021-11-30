@@ -1,0 +1,15 @@
+<div>
+  <button (click)="login()" *ngIf="!isAuthenticated; else: notAuth" color="primary" mat-raised-button>
+    Login
+  </button>
+
+  <ng-template #notAuth>
+    <button routerLink="/dashboard" color="primary" mat-raised-button>
+      Home
+    </button>
+
+    <button class="auth-form-field-submit-logout-button" (click)="logout()" mat-button>
+      Logout
+    </button>
+  </ng-template>
+</div>

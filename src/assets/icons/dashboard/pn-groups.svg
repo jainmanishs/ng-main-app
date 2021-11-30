@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="105" height="105" viewBox="0 0 105 105">
+  <defs>
+    <clipPath id="clip-Custom_Size_1">
+      <rect width="105" height="105"/>
+    </clipPath>
+  </defs>
+  <g id="Custom_Size_1" data-name="Custom Size – 1" clip-path="url(#clip-Custom_Size_1)">
+    <g id="Group_1025" data-name="Group 1025" transform="translate(-562 -186.41)">
+      <path id="Path_799" data-name="Path 799" d="M9.223,16.446H2v50.56c0,3.973,4.862,4.931,7.223,7.223h50.56V67.006H9.223ZM67.006,2H23.669a7.244,7.244,0,0,0-7.223,7.223V52.56a7.244,7.244,0,0,0,7.223,7.223H67.006a7.244,7.244,0,0,0,7.223-7.223V9.223A7.244,7.244,0,0,0,67.006,2Zm0,32.5H23.669V27.28H67.006ZM48.949,48.949H23.669V41.726h25.28ZM67.006,20.057H23.669V12.834H67.006Z" transform="translate(577.634 200.771)"/>
+      <g id="Group_1024" data-name="Group 1024" transform="translate(578.989 216.957)">
+        <path id="Union_5" data-name="Union 5" d="M2.117,56.758C-.268,54.581.01,50.618.01,50.618V0H8.243V50.229H60.118v8.232H8.243a7.716,7.716,0,0,1-.887.044A7.906,7.906,0,0,1,2.117,56.758Z" fill="#8561c5"/>
+      </g>
+    </g>
+  </g>
+</svg>

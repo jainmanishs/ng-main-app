@@ -1,0 +1,29 @@
+{
+  "title": "Open",
+  "cards": {
+    "visualizator": {
+      "title": "Vizualizator",
+      "subtitle": "Process visualization (eFox.NET4)"
+    },
+    "configurator": {
+      "title": "Configurator",
+      "subtitle": "Process visualization"
+    },
+    "supplyVisibility": {
+      "title": "Supply Visibility",
+      "subtitle": "Material management"
+    },
+    "materialManagementViews": {
+      "title": "MM Views",
+      "subtitle": "Material management views configuration"
+    },
+    "materialManagementDashboard": {
+      "title": "Configuration",
+      "subtitle": "Material management dashboard"
+    },
+    "materialManagementCommits": {
+      "title": "Commits",
+      "subtitle": "Material management commits"
+    }
+  }
+}

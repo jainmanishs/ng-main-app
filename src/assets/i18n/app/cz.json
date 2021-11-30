@@ -1,0 +1,50 @@
+{
+  "login": {
+    "title": "Vítejte",
+    "error": "Špatně zadané přihlašovací údaje",
+    "form": {
+      "domain": "Doména",
+      "name": "Uživatelské jméno",
+      "password": "Heslo",
+      "plant": "Plant",
+      "submitButton": "Přihlásit se",
+      "dashboardButton": "Přejít na dashboard",
+      "logoutButton": "Odhlásit se"
+    },
+    "application": {
+      "subtitle": "Přihlásit se do systému pomocí aplikačního účtu"
+    },
+    "domain": {
+      "subtitle": "Přihlásit se do systému pomocí doménového účtu"
+    }
+  },
+  "toolbar": {
+    "settings": "Nastavení",
+    "logout": "Odhlášení"
+  },
+  "feedback": {
+    "title": "Podělte se o svůj názor",
+    "emoticonsTitle": "Jak jste spokojeni s Orionem?",
+    "messagePlaceHolder": "Prosím sdělte nám svůj názor",
+    "insertAttachment": "Vložte přílohu",
+    "browse": "procházet",
+    "submit": "Odeslat",
+    "cancel": "Storno",
+    "emotions": {
+      "veryDissatisfied": "Velmi nespokojený",
+      "dissatisfied": "Nespokojený",
+      "neutral": "Neutrální",
+      "satisfied": "Spokojený",
+      "excited": "Velmi spokojený"
+    },
+    "success": "Vaše zpráva byla odeslána, děkujeme vám za zpětnou vazbu.",
+    "error": "Vaši zprávu se nám nepodařilo odeslat, zkuste to prosím později."
+  },
+  "error": {
+    "forbidden": "Uživatel nemá oprávnění k této akci."
+  },
+  "plantHealthCheck": {
+    "title": "CHYBA API",
+    "message": "Zdá se, že API má v tuto chvíli problémy, zkuste to prosím znovu později."
+  }
+}

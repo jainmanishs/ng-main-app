@@ -1,0 +1,77 @@
+{
+  "name": "Development",
+  "version": "orion",
+  "apiloginUrl": "http://localhost:3333/api/",
+  "apiBaseUrl": "https://ls51-dev.orion.cz.foxconn.com:8443/",
+  "apiBaseUrl66": "https://develop.dev.orion.foxservice.cz/",
+  "apiBaseUrl-test": "https://ls51-dev.orion.cz.foxconn.com:8443/",
+  "adService": "https://fs.foxconn.cz",
+  "excelService": "https://excelerator.cz.foxconn.com",
+  "userSettingsService": "https://dev.orion.foxservice.cz/api/",
+  "disableCommitManagement":true,
+  "language": {
+    "default": {
+      "code": "en",
+      "language": "en-EN",
+      "description": "English"
+    },
+    "languages": [
+      {
+        "code": "cz",
+        "language": "cs-CZ",
+        "description": "Čeština"
+      },
+      {
+        "code": "en",
+        "language": "en-EN",
+        "description": "English"
+      }
+    ]
+  },
+  "login": {
+    "apiLoginUrl": "http://localhost:3333/api/",
+    "apiLogoutUrl": "http://localhost:6013/api/v1/account/logout"
+  },
+  "feedback": {
+    "saveFeedback": "api/v1/UserFeedback/SaveFeedback"
+  },
+  "plantHealthCheck": {
+    "checkHealth": "api/-/health"
+  },
+  "modulesBaseUrl": {
+    "configurator": {
+      "workflows": "api/v1/WorkFlow/Library/GetWorkFlows",
+      "workflow": "api/v1/WorkFlow/Library/GetWorkFlow",
+      "copyWorkflow": "api/v1/WorkFlow/Library/CopyWorkFlow",
+      "releaseWorkFlow": "api/v1/WorkFlow/Library/ReleaseWorkFlow",
+      "getWorkflows": "api/v1/WorkFlow/Library/GetWorkFlows",
+      "getWorkflow": "api/v1/WorkFlow/Library/GetWorkFlow",
+      "getPlants": "api/v1/adapter/workflow/getPlants",
+      "getElements": "api/v1/WorkFlow/Catalogue/GetElements",
+      "getElementParameters": "api/v1/WorkFlow/Catalogue/GetElementParameters",
+      "getHistory": "api/v1/WorkFlow/Library/GetHistory",
+      "saveWorkflow": "api/v1/WorkFlow/Library/SaveWorkFlow",
+      "deleteWorkflow": "api/v1/WorkFlow/Library/DeleteWorkFlow",
+      "releaseWorkflow": "api/v1/WorkFlow/Library/ReleaseWorkFlow",
+      "getWorkFlowRevisions": "api/v1/WorkFlow/Library/GetWorkFlowRevisions",
+      "saveProcess": "api/v1/WorkFlow/Library/SaveProcess",
+      "importWorkFlow": "api/v1/WorkFlow/Library/ImportWorkFlow",
+      "exportWorkflow": "api/v1/WorkFlow/Library/ExportWorkFlow",
+      "lockWorkflow": "api/v1/WorkFlow/Library/LockWorkflow",
+      "unlockWorkflow": "api/v1/WorkFlow/Library/unlockWorkflow",
+      "getWorkFlowLocks": "api/v1/WorkFlow/Library/GetWorkFlowLocks"
+    },
+    "process": {
+      "getProcessParameters": "api/v1/Workflow/Catalogue/GetProcessParameters",
+      "getConnectorParameters": "api/v1/Workflow/Catalogue/GetConnectorParameters"
+    },
+    "materialManagement": {
+      "userSettings": "UserSettings",
+      "commits": "api/v1/MaterialManagement/Commits",
+      "bufferRules": "api/v1/MaterialManagement/BufferRules",
+      "supplyVisibility": "api/v1/MaterialManagement/SupplyVisibility",
+      "approvedVendorList": "api/v1/MaterialManagement/ApprovedVendorList"
+    }
+  },
+  "plants": []
+}

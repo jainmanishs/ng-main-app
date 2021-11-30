@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -40,6 +41,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+             
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -56,6 +58,14 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "orion-cs": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
             }
           }
         },
@@ -67,6 +77,9 @@
           "configurations": {
             "production": {
               "browserTarget": "ng-main-app:build:production"
+            },
+            "orion-cs": {
+              "browserTarget": "ng-main-app:build:orion-cs"
             }
           }
         },
@@ -88,6 +101,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -146,6 +160,14 @@
             "scripts": []
           },
           "configurations": {
+            "orion-cs": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/src/environments/environment.ts",
+                  "with": "apps/orion/src/environments/environment.orion-cs.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -561,6 +583,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ng-main-app"
 }

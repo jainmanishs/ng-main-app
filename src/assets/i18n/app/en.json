@@ -1,0 +1,50 @@
+{
+  "login": {
+    "title": "Welcome",
+    "error": "Incorrect login information",
+    "form": {
+      "domain": "Domain",
+      "name": "User Name",
+      "password": "Password",
+      "plant": "Plant",
+      "submitButton": "Sign In",
+      "dashboardButton": "Go to dashboard",
+      "logoutButton": "Logout"
+    },
+    "application": {
+      "subtitle": "Sign in by entering the application information below"
+    },
+    "domain": {
+      "subtitle": "Sign in by entering the domain information below"
+    }
+  },
+  "toolbar": {
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "feedback": {
+    "title": "Share your feedback",
+    "emoticonsTitle": "How satisfied are you with Orion?",
+    "messagePlaceHolder": "Please give us your feedback",
+    "insertAttachment": "Insert the attachment",
+    "browse": "browse",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "emotions": {
+      "veryDissatisfied": "Very dissatisfied",
+      "dissatisfied": "Dissatisfied",
+      "neutral": "Neutral",
+      "satisfied": "Satisfied",
+      "excited": "Excited"
+    },
+    "success": "Your message has been sent, thank you for yosur feedback.",
+    "error": "We were unable to send your message, please try again later."
+  },
+  "error": {
+    "forbidden": "The user is not authorized to perform this operation."
+  },
+  "plantHealthCheck": {
+    "title": "API ERROR",
+    "message": "The API seems to have a problem at the moment, please try again later."
+  }
+}

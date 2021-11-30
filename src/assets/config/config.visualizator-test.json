@@ -1,0 +1,122 @@
+{
+  "name": "Visualizator Test",
+  "version": "visualizator",
+  "apiBaseUrl": "https://cz03app01tst.cz.foxconn.com:3334/orion/",
+  "adService": "https://fs.foxconn.cz",
+  "disableCommitManagement":true,
+  "language": {
+    "default": {
+      "code": "en",
+      "language": "en-EN",
+      "description": "English"
+    },
+    "languages": [
+      {
+        "code": "cz",
+        "language": "cs-CZ",
+        "description": "Čeština"
+      },
+      {
+        "code": "en",
+        "language": "en-EN",
+        "description": "English"
+      }
+    ]
+  },
+  "login": {
+    "apiLoginUrl": "https://cz03app01tst.cz.foxconn.com:3334/orion/api/v1/login/activeDirectory",
+    "apiLogoutUrl": "https://cz03app01tst.cz.foxconn.com:3334/orion/api/v1/account/logout"
+  },
+  "feedback": {
+    "saveFeedback": "api/v1/UserFeedback/SaveFeedback"
+  },
+  "plantHealthCheck": {
+    "checkHealth": "api/-/health"
+  },
+  "modulesBaseUrl": {
+    "configurator": {
+      "getWorkflows": "api/v1/adapter/workflow/GetWorkFlows",
+      "getWorkflow": "api/v1/adapter/workflow/GetWorkFlow",
+      "getPlants": "api/v1/adapter/workflow/GetPlants",
+      "getHistory": "api/v1/adapter/workflow/GetHistory",
+      "saveWorkflow": "api/v1/adapter/workflow/SaveWorkFlowLayout",
+      "saveProcess": "api/v1/adapter/workflow/SaveProcess",
+      "deleteWorkflow": "api/v1/adapter/workflow/DeleteWorkFlow",
+      "releaseWorkflow": "api/v1/adapter/workflow/ReleaseWorkFlow",
+      "getElements": "api/v1/WorkFlow/Catalogue/GetElements",
+      "getWorkFlowRevisions": "api/v1/adapter/workflow/getWorkFlowRevisions"
+    },
+    "process": {
+      "getProcessParameters": "api/v1/Workflow/Catalogue/GetProcessParameters"
+    },
+    "materialManagement": {
+      "userSettings": "api/v1/MaterialManagement/UserSettings",
+      "commits": "api/v1/MaterialManagement/Commits",
+      "bufferRules": "api/v1/MaterialManagement/BufferRules",
+      "supplyVisibility": "api/v1/MaterialManagement/SupplyVisibility",
+      "approvedVendorList": "api/v1/MaterialManagement/ApprovedVendorList"
+    }
+  },
+  "plants": [
+    {
+      "viewValue": "ACC0",
+      "value": 966
+    },
+    {
+      "viewValue": "CZ03",
+      "value": 721
+    },
+    {
+      "viewValue": "CZ05",
+      "value": 721
+    },
+    {
+      "viewValue": "CZ16",
+      "value": 522
+    },
+    {
+      "viewValue": "CZ22",
+      "value": 184
+    },
+    {
+      "viewValue": "CZ24",
+      "value": 211
+    },
+    {
+      "viewValue": "CZ28",
+      "value": 86
+    },
+    {
+      "viewValue": "FC03",
+      "value": 136
+    },
+    {
+      "viewValue": "FC04",
+      "value": 254
+    },
+    {
+      "viewValue": "FC05",
+      "value": 252
+    },
+    {
+      "viewValue": "LS02",
+      "value": 121
+    },
+    {
+      "viewValue": "LS04",
+      "value": 121
+    },
+    {
+      "viewValue": "LS51",
+      "value": 966
+    },
+    {
+      "viewValue": "LS52",
+      "value": 110
+    },
+    {
+      "viewValue": "LS53",
+      "value": 155
+    }
+  ]
+}

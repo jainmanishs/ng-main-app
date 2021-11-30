@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="29.697" height="29.697" viewBox="0 0 29.697 29.697">
+  <g id="Icon_edit" data-name="Icon edit" transform="translate(0 0)">
+    <path id="ic_remove_circle_outline_24px" d="M16.848,2A14.848,14.848,0,1,0,31.7,16.848,14.854,14.854,0,0,0,16.848,2Zm0,26.727A11.879,11.879,0,1,1,28.727,16.848,11.895,11.895,0,0,1,16.848,28.727Z" transform="translate(-2 -2)" fill="#673ab7"/>
+    <path id="ic_create_24px" d="M3,11.814v2.32H5.32l6.842-6.842-2.32-2.32ZM13.955,5.5a.616.616,0,0,0,0-.872L12.508,3.178a.616.616,0,0,0-.872,0L10.5,4.31l2.32,2.32Z" transform="translate(7.124 6.295)" fill="#673ab7"/>
+  </g>
+</svg>

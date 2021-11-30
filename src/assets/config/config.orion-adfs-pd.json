@@ -1,0 +1,91 @@
+{
+  "name": "Orion ADFS",
+  "version": "orion-adfs",
+  "apiBaseUrl": "https://ls51-dev.orion.cz.foxconn.com:8443/",
+  "apiBaseUrl66": "https://develop.dev.orion.foxservice.cz/",
+  "apiBaseUrl-test": "https://ls51-dev.orion.cz.foxconn.com:8443/",
+  "adService": "https://fs.foxconn.cz",
+  "disableCommitManagement":true,
+  "language": {
+    "default": {
+      "code": "en",
+      "language": "en-EN",
+      "description": "English"
+    },
+    "languages": [
+      {
+        "code": "cz",
+        "language": "cs-CZ",
+        "description": "Čeština"
+      },
+      {
+        "code": "en",
+        "language": "en-EN",
+        "description": "English"
+      }
+    ]
+  },
+  "login": {
+    "apiLoginUrl": "",
+    "apiLogoutUrl": ""
+  },
+  "feedback": {
+    "saveFeedback": "api/v1-tk/UserFeedback/SaveFeedback"
+  },
+  "plantHealthCheck": {
+    "checkHealth": "api/-/health"
+  },
+  "modulesBaseUrl": {
+    "configurator": {
+      "workflows": "api/v1-tk/WorkFlow/Library/GetWorkFlows",
+      "workflow": "api/v1-tk/WorkFlow/Library/GetWorkFlow",
+      "copyWorkflow": "api/v1-tk/WorkFlow/Library/CopyWorkFlow",
+      "releaseWorkFlow": "api/v1-tk/WorkFlow/Library/ReleaseWorkFlow",
+      "getWorkflows": "api/v1-tk/WorkFlow/Library/GetWorkFlows",
+      "getWorkflow": "api/v1-tk/WorkFlow/Library/GetWorkFlow",
+      "getPlants": "api/v1-tk/adapter/workflow/getPlants",
+      "getElements": "api/v1-tk/WorkFlow/Catalogue/GetElements",
+      "getElementParameters": "api/v1-tk/WorkFlow/Catalogue/GetElementParameters",
+      "getHistory": "api/v1-tk/WorkFlow/Library/GetHistory",
+      "saveWorkflow": "api/v1-tk/WorkFlow/Library/SaveWorkFlow",
+      "deleteWorkflow": "api/v1-tk/WorkFlow/Library/DeleteWorkFlow",
+      "releaseWorkflow": "api/v1-tk/WorkFlow/Library/ReleaseWorkFlow",
+      "getWorkFlowRevisions": "api/v1-tk/WorkFlow/Library/GetWorkFlowRevisions",
+      "saveProcess": "api/v1-tk/WorkFlow/Library/SaveProcess",
+      "importWorkFlow": "api/v1-tk/WorkFlow/Library/ImportWorkFlow",
+      "exportWorkflow": "api/v1-tk/WorkFlow/Library/ExportWorkFlow",
+      "lockWorkflow": "api/v1-tk/WorkFlow/Library/LockWorkflow",
+      "unlockWorkflow": "api/v1-tk/WorkFlow/Library/unlockWorkflow",
+      "getWorkFlowLocks": "api/v1-tk/WorkFlow/Library/GetWorkFlowLocks"
+    },
+    "process": {
+      "getProcessParameters": "api/v1-tk/WorkFlow/Catalogue/GetProcessParameters",
+      "getConnectorParameters": "api/v1-tk/Workflow/Catalogue/GetConnectorParameters"
+    },
+    "materialManagement": {
+      "userSettings": "api/v1/MaterialManagement/UserSettings",
+      "commits": "api/v1/MaterialManagement/Commits",
+      "bufferRules": "api/v1/MaterialManagement/BufferRules",
+      "supplyVisibility": "api/v2/MaterialManagement/SupplyVisibility",
+      "approvedVendorList": "api/v1/MaterialManagement/ApprovedVendorList",
+      "mmViews": "api/v2/MaterialManagement/MMViewConfiguration/GetMaterialManagementViews",
+      "views": "api/v2/MaterialManagement/MMViewConfiguration/GetMaterialManagementViews",
+      "createView": "api/v2/MaterialManagement/MMViewConfiguration/CreateMaterialManagementView",
+      "updateView": "api/v2/MaterialManagement/MMViewConfiguration/UpdateMaterialManagementView",
+      "singleValues": "api/v2/MaterialManagement/MMViewConfiguration/GetFixListCalculationLineOrderViewByMMViewID",
+      "singleValuesUpdate": "api/v2/MaterialManagement/MMViewConfiguration/SaveListMaterialManagementFix",
+      "multiValues": "api/v2/MaterialManagement/MMViewConfiguration/GetListCalculationLineOrderViewByMMViewID",
+      "multiValuesUpdate": "api/v2/MaterialManagement/MMViewConfiguration/SaveListMaterialManagementViewCalculationLine",
+      "createCalculationLine": "api/v2/MaterialManagement/MMViewConfiguration/CreateCalculationLine",
+      "getCalculationLineByID": "api/v2/MaterialManagement/MMViewConfiguration/getCalculationLineByID",
+      "deleteCalculationLine": "api/v2/MaterialManagement/MMViewConfiguration/deleteCalculationLine",
+      "deleteCalculationLineById": "api/v2/MaterialManagement/MMViewConfiguration/deleteCalculationLineID",
+      "updateCalculationLine": "api/v2/MaterialManagement/MMViewConfiguration/UpdateCalculationLine",
+      "addCalculationLineDetail": "api/v2/MaterialManagement/MMViewConfiguration/AddCalculationLineDetail",
+      "createCalculationLineDetail": "api/v2/MaterialManagement/MMViewConfiguration/CreateCalculationLineDetail",
+      "updateCalculationLineDetail": "api/v2/MaterialManagement/MMViewConfiguration/UpdateCalculationLineDetail",
+      "deleteCalculationLineDetail": "api/v2/MaterialManagement/MMViewConfiguration/DeleteCalculationLineDetail"
+},
+    "plants": []
+  }
+}

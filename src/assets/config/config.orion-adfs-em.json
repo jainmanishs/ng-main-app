@@ -1,0 +1,73 @@
+{
+  "name": "Orion ADFS",
+  "version": "orion-adfs",
+  "apiBaseUrl": "https://ls51-dev.orion.cz.foxconn.com:8443/",
+  "apiBaseUrl66": "https://develop.dev.orion.foxservice.cz/",
+  "apiBaseUrl-test": "https://ls51-dev.orion.cz.foxconn.com:8443/",
+  "adService": "https://fs.foxconn.cz",
+  "disableCommitManagement":true,
+  "language": {
+    "default": {
+      "code": "en",
+      "language": "en-EN",
+      "description": "English"
+    },
+    "languages": [
+      {
+        "code": "cz",
+        "language": "cs-CZ",
+        "description": "Čeština"
+      },
+      {
+        "code": "en",
+        "language": "en-EN",
+        "description": "English"
+      }
+    ]
+  },
+  "login": {
+    "apiLoginUrl": "",
+    "apiLogoutUrl": ""
+  },
+  "feedback": {
+    "saveFeedback": "api/emiv1/UserFeedback/SaveFeedback"
+  },
+  "plantHealthCheck": {
+    "checkHealth": "api/-/health"
+  },
+  "modulesBaseUrl": {
+    "configurator": {
+      "workflows": "api/emiv1/WorkFlow/Library/GetWorkFlows",
+      "workflow": "api/emiv1/WorkFlow/Library/GetWorkFlow",
+      "copyWorkflow": "api/emiv1/WorkFlow/Library/CopyWorkFlow",
+      "releaseWorkFlow": "api/emiv1/WorkFlow/Library/ReleaseWorkFlow",
+      "getWorkflows": "api/emiv1/WorkFlow/Library/GetWorkFlows",
+      "getWorkflow": "api/emiv1/WorkFlow/Library/GetWorkFlow",
+      "getPlants": "api/emiv1/adapter/workflow/getPlants",
+      "getElements": "api/emiv1/WorkFlow/Catalogue/GetElements",
+      "getElementParameters": "api/emiv1/WorkFlow/Catalogue/GetElementParameters",
+      "getHistory": "api/emiv1/WorkFlow/Library/GetHistory",
+      "saveWorkflow": "api/emiv1/WorkFlow/Library/SaveWorkFlow",
+      "deleteWorkflow": "api/emiv1/WorkFlow/Library/DeleteWorkFlow",
+      "releaseWorkflow": "api/emiv1/WorkFlow/Library/ReleaseWorkFlow",
+      "getWorkFlowRevisions": "api/emiv1/WorkFlow/Library/GetWorkFlowRevisions",
+      "saveProcess": "api/emiv1/WorkFlow/Library/SaveProcess",
+      "importWorkFlow": "api/emiv1/WorkFlow/Library/ImportWorkFlow",
+      "exportWorkflow": "api/emiv1/WorkFlow/Library/ExportWorkFlow",
+      "lockWorkflow": "api/emiv1/WorkFlow/Library/LockWorkflow",
+      "unlockWorkflow": "api/emiv1/WorkFlow/Library/unlockWorkflow",
+      "getWorkFlowLocks": "api/emiv1/WorkFlow/Library/GetWorkFlowLocks"
+    },
+    "process": {
+      "getProcessParameters": "api/emiv1/WorkFlow/Catalogue/GetProcessParameters",
+      "getConnectorParameters": "api/emiv1/Workflow/Catalogue/GetConnectorParameters"
+    },
+    "materialManagement": {
+      "commits": "api/emiv1/MaterialManagement/Commits",
+      "bufferRules": "api/emiv1/MaterialManagement/BufferRules",
+      "supplyVisibility": "api/emiv1/MaterialManagement/SupplyVisibility",
+      "approvedVendorList": "api/emiv1/MaterialManagement/ApprovedVendorList"
+    },
+    "plants": []
+  }
+}

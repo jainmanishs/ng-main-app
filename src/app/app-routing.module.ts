@@ -9,7 +9,7 @@ const routes: Routes = [
    loadChildren: '../../projects/ng-app-one/src/app/app.module#App1SharedModule'},
   {path: 'app2', 
    loadChildren: '../../projects/ng-app-two/src/app/app.module#App2SharedModule'},
-  { path: '**', redirectTo: '/app1/one'}
+  { path: '**', redirectTo: ''}
  ];
 @NgModule({
   imports: [RouterModule.forRoot(routes),

@@ -1,0 +1,74 @@
+{
+  "name": "Orion ADFS",
+  "version": "orion-adfs",
+  "apiBaseUrl": "https://ls51-dev.orion.cz.foxconn.com:8443/",
+  "apiBaseUrl66": "https://develop.dev.orion.foxservice.cz/",
+  "apiBaseUrl-test": "https://ls51-dev.orion.cz.foxconn.com:8443/",
+  "adService": "https://fs.foxconn.cz",
+  "userSettingsService": "https://dev.orion.foxservice.cz/api/",
+  "disableCommitManagement":true,
+  "language": {
+    "default": {
+      "code": "en",
+      "language": "en-EN",
+      "description": "English"
+    },
+    "languages": [
+      {
+        "code": "cz",
+        "language": "cs-CZ",
+        "description": "Čeština"
+      },
+      {
+        "code": "en",
+        "language": "en-EN",
+        "description": "English"
+      }
+    ]
+  },
+  "login": {
+    "apiLoginUrl": "",
+    "apiLogoutUrl": ""
+  },
+  "feedback": {
+    "saveFeedback": "api/prv1/UserFeedback/SaveFeedback"
+  },
+  "plantHealthCheck": {
+    "checkHealth": "api/-/health"
+  },
+  "modulesBaseUrl": {
+    "configurator": {
+      "workflows": "api/prv1/WorkFlow/Library/GetWorkFlows",
+      "workflow": "api/prv1/WorkFlow/Library/GetWorkFlow",
+      "copyWorkflow": "api/prv1/WorkFlow/Library/CopyWorkFlow",
+      "releaseWorkFlow": "api/prv1/WorkFlow/Library/ReleaseWorkFlow",
+      "getWorkflows": "api/prv1/WorkFlow/Library/GetWorkFlows",
+      "getWorkflow": "api/prv1/WorkFlow/Library/GetWorkFlow",
+      "getPlants": "api/prv1/adapter/workflow/getPlants",
+      "getElements": "api/prv1/WorkFlow/Catalogue/GetElements",
+      "getElementParameters": "api/prv1/WorkFlow/Catalogue/GetElementParameters",
+      "getHistory": "api/prv1/WorkFlow/Library/GetHistory",
+      "saveWorkflow": "api/prv1/WorkFlow/Library/SaveWorkFlow",
+      "deleteWorkflow": "api/prv1/WorkFlow/Library/DeleteWorkFlow",
+      "releaseWorkflow": "api/prv1/WorkFlow/Library/ReleaseWorkFlow",
+      "getWorkFlowRevisions": "api/prv1/WorkFlow/Library/GetWorkFlowRevisions",
+      "saveProcess": "api/prv1/WorkFlow/Library/SaveProcess",
+      "importWorkFlow": "api/prv1/WorkFlow/Library/ImportWorkFlow",
+      "exportWorkflow": "api/prv1/WorkFlow/Library/ExportWorkFlow",
+      "lockWorkflow": "api/prv1/WorkFlow/Library/LockWorkflow",
+      "unlockWorkflow": "api/prv1/WorkFlow/Library/unlockWorkflow",
+      "getWorkFlowLocks": "api/prv1/WorkFlow/Library/GetWorkFlowLocks"
+    },
+    "process": {
+      "getProcessParameters": "api/prv1/WorkFlow/Catalogue/GetProcessParameters",
+      "getConnectorParameters": "api/prv1/Workflow/Catalogue/GetConnectorParameters"
+    },
+    "materialManagement": {
+      "commits": "api/prv1/MaterialManagement/Commits",
+      "bufferRules": "api/prv1/MaterialManagement/BufferRules",
+      "supplyVisibility": "api/prv1/MaterialManagement/SupplyVisibility",
+      "approvedVendorList": "api/prv1/MaterialManagement/ApprovedVendorList"
+    },
+    "plants": []
+  }
+}

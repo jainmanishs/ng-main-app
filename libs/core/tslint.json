@@ -1,0 +1,7 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [true, "attribute", "orion-platform", "camelCase"],
+    "component-selector": [true, "element", "orion-platform", "kebab-case"]
+  }
+}

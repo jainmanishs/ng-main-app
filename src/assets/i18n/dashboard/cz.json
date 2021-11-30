@@ -1,0 +1,25 @@
+{
+  "title": "Otevřít",
+  "cards": {
+    "visualizator": {
+      "title": "Vizualizátor",
+      "subtitle": "Vizualizace procesů (eFox.NET4)"
+    },
+    "configurator": {
+      "title": "Konfigurátor",
+      "subtitle": "Vizualizace procesů"
+    },
+    "supplyVisibility": {
+      "title": "Supply Visibility",
+      "subtitle": "Management materiálu"
+    },
+    "materialManagementViews": {
+      "title": "Konfigurace",
+      "subtitle": "Management materiálu"
+    },
+    "materialManagementCommits": {
+      "title": "Commity",
+      "subtitle": "Management materiálu"
+    }
+  }
+}
