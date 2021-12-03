@@ -187,7 +187,7 @@ export class AuthenticationState {
     { token, username }: LoginSuccess
   ) {
     const tenants = jwt(token).Tenant as string[];
-
+    debugger
     patchState({
       token: token,
       tenants: tenants,
@@ -255,7 +255,7 @@ export class AuthenticationState {
       upn,
       primarySid
     });
-
+      debugger
     dispatch(new FetchAdfsPlants());
   }
 

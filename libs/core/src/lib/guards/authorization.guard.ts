@@ -54,7 +54,7 @@ export class AuthorizationGuard implements CanActivate {
           const baseUrl = parsedUrl.origin;
 
           this.authenticationService.setRedirectUrl(baseUrl + this.location.path(true));
-          this.router.navigate(['/home']);
+          this.router.navigate(['/unauthorized']);
           return false;
         }
         return true;

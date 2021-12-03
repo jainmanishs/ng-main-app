@@ -1,0 +1,22 @@
+<p class="center">dashboard works!</p>
+<app-nav class="center"></app-nav>
+<div class="center space">
+    <button (click)="getDashboardData()" color="primary" mat-raised-button>
+        Get Dashboard Settings
+    </button>
+</div>
+<div *ngIf="!isLoading" class="center space-side">
+    {{dashboardData | json }}
+</div>
+<div class="center space" *ngIf="isLoading">
+    <mat-progress-spinner [color]="'primary'" [mode]="'indeterminate'" [diameter]="35"></mat-progress-spinner>
+</div>
+<!-- <div class="center space">
+    Token Length {{tokens.length}}<br>
+    Time --{{time}}m<br>
+    Checked Times --{{checkedTimes}}--
+</div>
+
+<div *ngFor="let token of tokens;let i=index">
+    Token Id{{i}} -----------------------{{token}}
+</div> -->

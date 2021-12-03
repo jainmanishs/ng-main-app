@@ -43,13 +43,14 @@ export class AuthenticationService {
     this.oidcSecurityService.onAuthorizationResult.subscribe(
       (authorizationResult: AuthorizationResult) => {
         debugger
-        //Testing
-        const authorizationResult2:AuthorizationResult = new AuthorizationResult (
-          AuthorizationState.authorized,
-          ValidationResult.Ok,
-          false
-      );
-        this.onAuthorizationResultComplete(authorizationResult2);
+      //   //Testing
+      //   const authorizationResult2:AuthorizationResult = new AuthorizationResult (
+      //     AuthorizationState.authorized,
+      //     ValidationResult.Ok,
+      //     false
+      // );
+      //   this.onAuthorizationResultComplete(authorizationResult2);
+      this.onAuthorizationResultComplete(authorizationResult)
 
       });
   }
@@ -188,6 +189,9 @@ export class AuthenticationService {
       window.location.toString()
     );
   }
+  renewToken(){
+    this.oidcSecurityService.getRefreshToken
+  }
 
   private onAuthorizationResultComplete(authorizationResult: AuthorizationResult) {
     switch (authorizationResult.authorizationState) {
@@ -206,7 +210,7 @@ export class AuthenticationService {
         break;
       case AuthorizationState.forbidden:
       case AuthorizationState.unauthorized:
-        this.router.navigate(['/home']);
+        this.router.navigate(['/unauthorized']);
         break;
       default:
         this.router.navigate(['/home']);

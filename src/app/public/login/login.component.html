@@ -1,15 +1,24 @@
-<div>
+<h1 class="center space">Login Test Component</h1>
+<div class="center space" *ngIf="!isLoading">
   <button (click)="login()" *ngIf="!isAuthenticated; else: notAuth" color="primary" mat-raised-button>
     Login
   </button>
 
   <ng-template #notAuth>
-    <button routerLink="/dashboard" color="primary" mat-raised-button>
-      Home
+    <button routerLink="/dashboard" color="primary" (click)="isLoading=true" mat-raised-button>
+      Dashboard
     </button>
 
-    <button class="auth-form-field-submit-logout-button" (click)="logout()" mat-button>
+    <button class="auth-form-field-submit-logout-button"  mat-button>
       Logout
     </button>
   </ng-template>
+</div>
+<div  class="center space"  *ngIf="isLoading">
+  <mat-progress-spinner
+  [color]="'primary'"
+  [mode]="'indeterminate'"
+  [diameter]="35"
+  ></mat-progress-spinner>
+
 </div>

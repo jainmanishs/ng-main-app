@@ -41,7 +41,6 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-             
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -155,6 +154,7 @@
               "projects/ng-app-one/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "projects/ng-app-one/src/styles.css"
             ],
             "scripts": []
@@ -223,6 +223,7 @@
               "projects/ng-app-one/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "projects/ng-app-one/src/styles.css"
             ],
             "scripts": []

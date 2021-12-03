@@ -8,6 +8,7 @@ import {
   OpenIdConfiguration,
   AuthWellKnownEndpoints
 } from 'angular-auth-oidc-client';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { App1SharedModule } from 'projects/ng-app-one/src/app/app.module';
@@ -15,7 +16,7 @@ import { App2SharedModule } from 'projects/ng-app-two/src/app/app.module';
 import { NavComponent } from './nav/nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatFormField, MatFormFieldModule, MatInput, MatInputModule, MatRippleModule } from '@angular/material';
+import { MatButtonModule, MatCommonModule, MatFormField, MatFormFieldModule, MatInput, MatInputModule, MatProgressSpinner, MatProgressSpinnerModule, MatRippleModule } from '@angular/material';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
@@ -25,9 +26,19 @@ import { LoginComponent } from './public/login/login.component';
 import { UnauthorizedComponent } from './public/unauthorized/unauthorized.component';
 import { NotFoundComponent } from './public/not-found/not-found.component';
 import { AuthenticationService } from 'libs/core/src/lib/authentication';
-import { HomeComponent } from './private/home/home.component';
 import { CoreModule } from 'libs/core/src';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
+import { routes } from './app-routing.module';
+import { DashboardComponent } from './private/dashboard/dashboard.component';
 
+/**
+ * Loads init translation from assets i18
+ * @param http
+ */
+ export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/app/', '.json?'+'v=0001');
+}
 /**
  * Loads Oauth configuration from assets folder
  * @param oidcConfigService
@@ -52,35 +63,49 @@ import { CoreModule } from 'libs/core/src';
     NavComponent,
     UnauthorizedComponent,
     NotFoundComponent,
-    HomeComponent,
     LoginComponent,
+    DashboardComponent,
 
   ],
   imports: [
+    App1SharedModule.forRoot(),
+    App2SharedModule.forRoot(),
+    RouterModule.forRoot(routes, {
+      onSameUrlNavigation: 'reload',
+      initialNavigation: true
+    }),
+    TranslateModule.forRoot({
+      isolate: true,
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
+    ConfigModule.forRoot({
+      provide: ConfigLoader,
+      useFactory: configFactory,
+      deps: [HttpClient]
+    }),
+    AuthModule.forRoot(),
+    AuthModule.forRoot(),
     CoreModule,
     HttpClientModule ,
     BrowserModule,
     AppRoutingModule,
     FormsModule,   
     ReactiveFormsModule,   
-    App1SharedModule.forRoot(),
-    App2SharedModule.forRoot(),
     BrowserAnimationsModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
-    AuthModule.forRoot(),
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    AuthModule.forRoot(),
-    ConfigModule.forRoot({
-      provide: ConfigLoader,
-      useFactory: configFactory,
-      deps: [HttpClient]
-    }),
+    MatCommonModule,
+    MatProgressSpinnerModule
 
   ],
   providers: [ /*  {
@@ -113,11 +138,11 @@ export class AppModule {
         wellKnownEndpoints.token_endpoint = `${config.stsServer}/oauth2/token`;
         wellKnownEndpoints.jwks_uri = `${config.stsServer}/discovery/keys`;
         wellKnownEndpoints.userinfo_endpoint = `${config.stsServer}/userinfo`;
-
-        debugger
         this.oidcSecurityService.setupModule(config, wellKnownEndpoints);
 
-      });
+    });
   }
  }
+
+
 
