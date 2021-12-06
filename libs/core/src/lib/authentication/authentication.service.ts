@@ -1,12 +1,13 @@
 import {Inject, Injectable} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 
 import { ConfigService } from '@ngx-config/core';
-import {AuthorizationResult, AuthorizationState, OidcSecurityService, ValidationResult} from 'angular-auth-oidc-client';
+import {AuthorizationResult, AuthorizationState, OidcSecurityService } from 'angular-auth-oidc-client';
 import {Router} from "@angular/router";
 import {DOCUMENT} from "@angular/common";
 import {ServerErrorInterceptor} from "../interceptors/server-error.interceptor";
+import { OidcSecurityCommon } from 'angular-auth-oidc-client/lib/services/oidc.security.common';
 
 export const authUrlPaths = {
   LOGIN: 'auth/login',
@@ -18,12 +19,16 @@ export class AuthenticationService {
   private isAuthenticated = new Subject<boolean>();
   isAuthenticated$ = this.isAuthenticated.asObservable();
   private hasStorage: boolean;
+  isGeneratingToken=false;
 
   constructor(
     private router: Router,
     private readonly httpClient: HttpClient,
     private readonly config: ConfigService,
     private readonly oidcSecurityService: OidcSecurityService,
+    // private readonly oidcSecurityCommon: OidcSecurityCommon,
+
+
     @Inject(DOCUMENT) private document: any
   ) {
     this.hasStorage = typeof Storage !== 'undefined';
@@ -42,7 +47,7 @@ export class AuthenticationService {
 
     this.oidcSecurityService.onAuthorizationResult.subscribe(
       (authorizationResult: AuthorizationResult) => {
-        debugger
+        
       //   //Testing
       //   const authorizationResult2:AuthorizationResult = new AuthorizationResult (
       //     AuthorizationState.authorized,
@@ -51,6 +56,7 @@ export class AuthenticationService {
       // );
       //   this.onAuthorizationResultComplete(authorizationResult2);
       this.onAuthorizationResultComplete(authorizationResult)
+      this.isGeneratingToken = false;
 
       });
   }
@@ -107,7 +113,9 @@ export class AuthenticationService {
   }
 
   getIdToken() {
+    
     return this.oidcSecurityService.getIdToken();
+
   }
 
   getToken() {
@@ -186,11 +194,21 @@ export class AuthenticationService {
 
   private doCallbackLogicIfRequired() {
     this.oidcSecurityService.authorizedCallbackWithCode(
+      
       window.location.toString()
     );
   }
   renewToken(){
-    this.oidcSecurityService.getRefreshToken
+    // this.oidcSecuritySilentRenew.initRenew();
+    // this.oidcSecurityCommon.
+    this.isGeneratingToken = true;
+    const params = {"Access-Control-Allow-Headers":"*"}
+    this.oidcSecurityService.setCustomRequestParameters(params)
+
+    this.oidcSecurityService.refreshSession().subscribe((e)=>{
+    })
+
+    
   }
 
   private onAuthorizationResultComplete(authorizationResult: AuthorizationResult) {

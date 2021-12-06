@@ -7,6 +7,7 @@ import { DashboardPanelModel } from 'src/app/all-models/sv-dashboard';
 import { HttpClient } from '@angular/common/http';
 import { ConfigService } from '@ngx-config/core';
 import { AuthenticationService, AuthenticationState } from 'libs/core/src';
+import { OidcConfigService } from 'angular-auth-oidc-client';
 
 @Component({
   selector: 'app-dashboard',
@@ -31,9 +32,8 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    // const self=this;
-    // this.tokens.push(self.authService.getIdToken());
-    // this.demonstrateTokenRenewal();
+    // this.tokens.push(this.authService.renewToken());
+    this.demonstrateTokenRenewal();
     // this.setTime(self);
   }
 
@@ -66,6 +66,10 @@ export class DashboardComponent implements OnInit {
       DashboardPanelModel.assignIdIfMissing(data[index]);
     }
   }
+  generateNewToken(){
+    this.authService.renewToken();
+
+  }
   getUserSettings(
     dashboard: string
   ): Observable<any> {
@@ -87,7 +91,7 @@ export class DashboardComponent implements OnInit {
         self.tokens.push(recentToken);
       }
       self.checkedTimes++;
-    }, 20000);
+    }, 5000);
   }
   setTime(self) {
     setInterval(function () {

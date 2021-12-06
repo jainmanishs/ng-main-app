@@ -11,13 +11,19 @@ import { AuthenticationState } from '../authentication/authentication.state';
 import { ConfigService } from '@ngx-config/core';
 import { mergeMap } from 'rxjs/operators';
 import { AuthenticationService } from '../authentication';
+import { OidcConfigService, OidcSecurityService } from 'angular-auth-oidc-client';
+import { OidcSecurityUserService } from 'angular-auth-oidc-client/lib/services/oidc.security.user-service';
+import { OidcSecuritySilentRenew } from 'angular-auth-oidc-client/lib/services/oidc.security.silent-renew';
+import { OidcSecurityCommon } from 'angular-auth-oidc-client/lib/services/oidc.security.common';
 
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
   constructor(
     private store: Store,
     private injector: Injector,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private oidcSecurityService: OidcSecurityService,
+
   ) {}
 
   intercept(
@@ -30,10 +36,12 @@ export class JwtInterceptor implements HttpInterceptor {
       observer.complete();
     }).pipe(
       mergeMap((res: ConfigService) => {
+    debugger
         const settings = res.getSettings();
         let modifiedRequest;
-
-        if (settings && settings.version && !req.url.includes('well-known')) {
+        if (settings && settings.version && !req.url.includes('well-known')
+        //  && !this.authenticationService.isGeneratingToken
+        ) {
           const { version } = settings;
 
           switch (version) {
