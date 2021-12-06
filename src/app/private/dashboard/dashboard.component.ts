@@ -15,12 +15,9 @@ import { OidcConfigService } from 'angular-auth-oidc-client';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  public readonly DASHBOARD_KEY = "svDashboard";
-  private apiUrl: string;
-  private userSettingsUrl;
-  tokens = [];
-  checkedTimes: number = 0;
-  time: number = 0;
+ 
+  
+  isLoading
   constructor(
     private http: HttpClient,
     private store: Store,
@@ -32,14 +29,18 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.tokens.push(this.authService.renewToken());
+    this.tokens.push(this.authService.getIdToken());
     this.demonstrateTokenRenewal();
+   console.log(this.authService.getPayloadFromIdToken());
     // this.setTime(self);
   }
 
 
-  dashboardData;
-  isLoading
+   dashboardData;
+   readonly DASHBOARD_KEY = "svDashboard";
+   apiUrl: string;
+   userSettingsUrl;
+
   async getDashboardData() {
     this.isLoading=true;
     let settings = await this.getUserSettings(this.DASHBOARD_KEY).toPromise().catch(() => {
@@ -66,10 +67,6 @@ export class DashboardComponent implements OnInit {
       DashboardPanelModel.assignIdIfMissing(data[index]);
     }
   }
-  generateNewToken(){
-    this.authService.renewToken();
-
-  }
   getUserSettings(
     dashboard: string
   ): Observable<any> {
@@ -82,6 +79,12 @@ export class DashboardComponent implements OnInit {
     )}/${action}`;
   }
 
+
+  tokens = [];
+  generateNewToken(){
+    this.authService.renewToken();
+
+  }
   demonstrateTokenRenewal() {
     const self = this;
     setInterval(function () {
@@ -89,9 +92,9 @@ export class DashboardComponent implements OnInit {
       const recentToken = self.authService.getIdToken();
       if (!self.tokens.find(e => { return e == recentToken })) {
         self.tokens.push(recentToken);
+        self.isLoading=false;
       }
-      self.checkedTimes++;
-    }, 5000);
+    }, 3000);
   }
   setTime(self) {
     setInterval(function () {
@@ -99,5 +102,32 @@ export class DashboardComponent implements OnInit {
       self.time++;
     }, 60000);
   }
+  renewTokenTimeout=-1;
+  renewTokenInterval=null;
+  renewTokenOnSpecifiedTime(timeOut){
+    this.stopRenewTokenTimeout();
+    this.renewTokenTimeout = timeOut;
+    const self=this
+    this.renewTokenInterval= setInterval(function () {
+     if(self.renewTokenTimeout<1){
+      this.isLoading=true;
+      self.generateNewToken();
+        clearInterval(self.renewTokenInterval)
+        self.renewTokenTimeout = -1;
+
+     }else{
+       self.renewTokenTimeout--;
+     }
+    }, 1000);
+  }
+  stopRenewTokenTimeout(){
+    this.isLoading=false;
+    if(this.renewTokenInterval){
+      clearInterval(this.renewTokenInterval);
+    }
+    this.renewTokenTimeout =-1;
+  }
+
+
 
 }

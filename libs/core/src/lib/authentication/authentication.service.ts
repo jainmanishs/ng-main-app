@@ -48,15 +48,7 @@ export class AuthenticationService {
     this.oidcSecurityService.onAuthorizationResult.subscribe(
       (authorizationResult: AuthorizationResult) => {
         
-      //   //Testing
-      //   const authorizationResult2:AuthorizationResult = new AuthorizationResult (
-      //     AuthorizationState.authorized,
-      //     ValidationResult.Ok,
-      //     false
-      // );
-      //   this.onAuthorizationResultComplete(authorizationResult2);
       this.onAuthorizationResultComplete(authorizationResult)
-      this.isGeneratingToken = false;
 
       });
   }
@@ -199,16 +191,8 @@ export class AuthenticationService {
     );
   }
   renewToken(){
-    // this.oidcSecuritySilentRenew.initRenew();
-    // this.oidcSecurityCommon.
-    this.isGeneratingToken = true;
-    const params = {"Access-Control-Allow-Headers":"*"}
-    this.oidcSecurityService.setCustomRequestParameters(params)
-
     this.oidcSecurityService.refreshSession().subscribe((e)=>{
     })
-
-    
   }
 
   private onAuthorizationResultComplete(authorizationResult: AuthorizationResult) {

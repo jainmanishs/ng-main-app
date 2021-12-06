@@ -36,10 +36,12 @@ export class JwtInterceptor implements HttpInterceptor {
       observer.complete();
     }).pipe(
       mergeMap((res: ConfigService) => {
-    debugger
+    
         const settings = res.getSettings();
         let modifiedRequest;
-        if (settings && settings.version && !req.url.includes('well-known')
+        // return next.handle(req);
+        console.log(req.url)
+        if (settings && settings.version && !req.url.includes('well-known') && !req.url.includes('https://adfs-proxy.cz.foxconn.com/')
         //  && !this.authenticationService.isGeneratingToken
         ) {
           const { version } = settings;
@@ -107,7 +109,7 @@ export class JwtInterceptor implements HttpInterceptor {
         headers: request.headers.append('Authorization', `Bearer ${token}`)
       });
     }
-
+    console.log(request.headers)
     return request;
   }
 }

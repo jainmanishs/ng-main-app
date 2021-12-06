@@ -1,27 +1,41 @@
 <p class="center">dashboard works!</p>
 <app-nav class="center"></app-nav>
-<div class="center space">
-    <button (click)="getDashboardData()" color="primary" mat-raised-button>
+<div class="center space  display-flex">
+    <button class="margin" (click)="getDashboardData()" color="primary" mat-raised-button>
         Get Dashboard Settings
+    </button>
+    <button class="margin" (click)="generateNewToken()" color="primary" mat-raised-button>
+       Generate New Token Manually
     </button>
 </div>
 <div *ngIf="!isLoading" class="center space-side">
     {{dashboardData | json }}
 </div>
-<div class="center space" *ngIf="isLoading">
-    <mat-progress-spinner [color]="'primary'" [mode]="'indeterminate'" [diameter]="35"></mat-progress-spinner>
-</div>
+
 <div class="center space">
-    <button (click)="generateNewToken()" color="primary" mat-raised-button>
-       Generate New Token Manually
-    </button>
+    Fetched Token Length {{tokens.length}}<br>
 </div>
-<div class="center space">
-    Token Length {{tokens.length}}<br>
-    Time --{{time}}m<br>
-    Checked Times --{{checkedTimes}}--
+<div   class="center space-side margin">
+    Fetched Token List
+</div>
+<div   class="center space-side  display-flex" *ngFor="let token of tokens;let i=index">
+   <div class="margin">{{i}}</div> <textarea >{{token}}</textarea>
 </div>
 
-<div   class="center space-side" *ngFor="let token of tokens;let i=index">
-    <textarea >{{token}}</textarea>
+<div class="center space display-flex">
+    <input matInput type="number" #tokenTimeOutInput>
+    <button (click)="renewTokenOnSpecifiedTime(tokenTimeOutInput.value)" color="primary" mat-raised-button>
+       Set Token Expire
+    </button>
+</div>
+<div *ngIf="renewTokenTimeout!==-1" class="center margin">
+    Token Expiring In {{renewTokenTimeout}} Seconds<br>
+</div>
+<div *ngIf="renewTokenTimeout!==-1" class="center">
+    <button (click)="stopRenewTokenTimeout()" color="primary" mat-raised-button>
+       Stop
+    </button>
+</div>
+<div class="center space margin" *ngIf="isLoading">
+    <mat-progress-spinner [color]="'primary'" [mode]="'indeterminate'" [diameter]="35"></mat-progress-spinner>
 </div>
