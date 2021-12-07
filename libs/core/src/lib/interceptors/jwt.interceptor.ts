@@ -41,6 +41,7 @@ export class JwtInterceptor implements HttpInterceptor {
         let modifiedRequest;
         // return next.handle(req);
         console.log(req.url)
+        debugger
         if (settings && settings.version && !req.url.includes('well-known') && !req.url.includes('https://adfs-proxy.cz.foxconn.com/')
         //  && !this.authenticationService.isGeneratingToken
         ) {

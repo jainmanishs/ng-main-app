@@ -19,5 +19,5 @@
   "auto_userinfo": false,
   "iss_validation_off": true,
   "trigger_authorization_result_event": true,
-  "renewTimeBeforeTokenExpiresInSeconds":3580
+  "renewTimeBeforeTokenExpiresInSeconds":60
 }
