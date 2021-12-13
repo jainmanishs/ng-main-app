@@ -69,6 +69,8 @@
 
 12. Sync all the above changes
 
+## Login/Renew Token Using adfs implementation
+ [See Document](/documentations/adfs-login-documentation.md)
 
 
 ## other commands
