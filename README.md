@@ -69,6 +69,9 @@
 
 12. Sync all the above changes
 
+## Add Shared Component In Main/Sub Application
+ [See Document](/documentations/shared-common-components.md)
+
 ## Login/Renew Token Using adfs implementation
  [See Document](/documentations/adfs-login-documentation.md)
 
