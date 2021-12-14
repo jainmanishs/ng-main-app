@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
       this.dashboardData = plainToClass(DashboardPanelModel, JSON.parse(settings.data) as DashboardPanelModel[]);
     }
     else {
-      debugger
+      
       //this.data = plainToClass(DashboardPanelModel, this.supplyVisibilityService.SVDefaultDashboard);
     }
     this.assignIdIfMissing(this.dashboardData);

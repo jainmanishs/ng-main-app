@@ -13,7 +13,7 @@
 	``` npm i ```
  
 5. To run the main project  in the ng-main-app folder
-	``` ng s ``` 
+	``` npm run cs ``` 
 
 6. To run the specific sub project in the ng-main-app folder
 	``` ng s --project=ng-app-one ```

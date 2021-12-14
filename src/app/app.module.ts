@@ -32,6 +32,7 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app-routing.module';
 import { DashboardComponent } from './private/dashboard/dashboard.component';
 import { OidcSecurityCommon } from 'angular-auth-oidc-client/lib/services/oidc.security.common';
+import { SharedModule } from './shared/shared.module';
 
 /**
  * Loads init translation from assets i18
@@ -69,6 +70,7 @@ import { OidcSecurityCommon } from 'angular-auth-oidc-client/lib/services/oidc.s
 
   ],
   imports: [
+    SharedModule,
     App1SharedModule.forRoot(),
     App2SharedModule.forRoot(),
     RouterModule.forRoot(routes, {
