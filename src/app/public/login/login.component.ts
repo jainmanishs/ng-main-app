@@ -50,10 +50,7 @@ export class LoginComponent implements OnInit {
    * Logout Adfs user
    */
   logoutAdfs = () => this.store.dispatch(new LogoutAdfs());
-  // this.loginAdfs();
-  // (credential){
-
-  // }  loginAdfs = () => this.store.dispatch(new LoginAdfs());
+  
 
 
 }

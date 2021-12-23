@@ -29,6 +29,8 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.authService.setRedirectUrl("/dashbaord");
+
     this.tokens.push(this.authService.getIdToken());
     this.demonstrateTokenRenewal();
    console.log(this.authService.getPayloadFromIdToken());
@@ -105,6 +107,7 @@ export class DashboardComponent implements OnInit {
   renewTokenTimeout=-1;
   renewTokenInterval=null;
   renewTokenOnSpecifiedTime(timeOut){
+
     this.stopRenewTokenTimeout();
     this.renewTokenTimeout = timeOut;
     const self=this

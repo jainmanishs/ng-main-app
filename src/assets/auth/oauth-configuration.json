@@ -2,7 +2,6 @@
   "stsServer":"https://adfs-proxy.cz.foxconn.com/C86xtA6JDGad6bUS/adfs",
   "authority":"https://adfs-proxy.cz.foxconn.com/C86xtA6JDGad6bUS/adfs",
   "redirect_url": "https://localhost:44360/home",
-  "redirect_uri":"https://localhost:44360/home",
   "client_id": "60c7d535-048c-417d-ad24-9aa27d166ee4",
   "response_type": "code",
   "scope": "openid profile",
@@ -16,8 +15,8 @@
   "log_console_warning_active": true,
   "log_console_debug_active": true,
   "max_id_token_iat_offset_allowed_in_seconds": 100,
-  "auto_userinfo": false,
+  "auto_userinfo": true,
   "iss_validation_off": true,
   "trigger_authorization_result_event": true,
-  "renewTimeBeforeTokenExpiresInSeconds":60
+  "renewTimeBeforeTokenExpiresInSeconds":3480
 }

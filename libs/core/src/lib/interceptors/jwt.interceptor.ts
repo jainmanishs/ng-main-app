@@ -3,7 +3,7 @@ import {
   HttpInterceptor,
   HttpRequest,
   HttpHandler,
-  HttpEvent
+  HttpEvent,
 } from '@angular/common/http';
 import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
@@ -60,6 +60,10 @@ export class JwtInterceptor implements HttpInterceptor {
             default:
               return next.handle(req);
           }
+        }else{
+          // req = req.clone({
+          //   headers: req.headers.append('Access-Control-Allow-Origin','*')
+          // });
         }
 
         return next.handle(req);

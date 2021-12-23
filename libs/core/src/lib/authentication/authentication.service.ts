@@ -68,6 +68,7 @@ export class AuthenticationService {
   }
 
   public setRedirectUrl(url: string): void {
+    debugger
     if (this.hasStorage) {
       sessionStorage.setItem('redirectUrl', url);
     }
@@ -196,7 +197,10 @@ export class AuthenticationService {
   }
 
   private onAuthorizationResultComplete(authorizationResult: AuthorizationResult) {
+    // console.log(this.oidcSecurityService.)
+    debugger
     switch (authorizationResult.authorizationState) {
+      
       case AuthorizationState.authorized:
         // Gets the redirect URL from authentication service.
         // If no redirect has been set, uses the default.
@@ -206,7 +210,7 @@ export class AuthenticationService {
           ServerErrorInterceptor.unauthorizedErrorOccurred = false;
           this.document.location.href = redirectUrl;
         } else {
-          this.router.navigate(['/dashboard']);
+          // this.router.navigate(['/home']);
         }
 
         break;

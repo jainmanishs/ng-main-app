@@ -33,6 +33,7 @@ import { routes } from './app-routing.module';
 import { DashboardComponent } from './private/dashboard/dashboard.component';
 import { OidcSecurityCommon } from 'angular-auth-oidc-client/lib/services/oidc.security.common';
 import { SharedModule } from './shared/shared.module';
+import { SlowBuffer } from 'buffer';
 
 /**
  * Loads init translation from assets i18
