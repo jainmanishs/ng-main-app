@@ -19,7 +19,6 @@ export class AuthenticationService {
   private isAuthenticated = new Subject<boolean>();
   isAuthenticated$ = this.isAuthenticated.asObservable();
   private hasStorage: boolean;
-  isGeneratingToken=false;
 
   constructor(
     private router: Router,
@@ -191,14 +190,8 @@ export class AuthenticationService {
       window.location.toString()
     );
   }
-  renewToken(){
-    this.oidcSecurityService.refreshSession().subscribe((e)=>{
-    })
-  }
 
   private onAuthorizationResultComplete(authorizationResult: AuthorizationResult) {
-    // console.log(this.oidcSecurityService.)
-    debugger
     switch (authorizationResult.authorizationState) {
       
       case AuthorizationState.authorized:
@@ -207,12 +200,9 @@ export class AuthenticationService {
         if (this.getRedirectUrl()) {
           const redirectUrl = this.getRedirectUrl();
           this.removeRedirectUrl();
-          ServerErrorInterceptor.unauthorizedErrorOccurred = false;
           this.document.location.href = redirectUrl;
-        } else {
-          // this.router.navigate(['/home']);
         }
-
+        ServerErrorInterceptor.unauthorizedErrorOccurred = false;
         break;
       case AuthorizationState.forbidden:
       case AuthorizationState.unauthorized:
@@ -221,5 +211,10 @@ export class AuthenticationService {
       default:
         this.router.navigate(['/home']);
     }
+  }
+
+  renewTokenSilently() {
+    this.oidcSecurityService.refreshSession().subscribe((e) => {
+    })
   }
 }

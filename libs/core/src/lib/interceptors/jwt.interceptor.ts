@@ -4,6 +4,7 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
+  HttpHeaders,
 } from '@angular/common/http';
 import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
@@ -11,11 +12,7 @@ import { AuthenticationState } from '../authentication/authentication.state';
 import { ConfigService } from '@ngx-config/core';
 import { mergeMap } from 'rxjs/operators';
 import { AuthenticationService } from '../authentication';
-import { OidcConfigService, OidcSecurityService } from 'angular-auth-oidc-client';
-import { OidcSecurityUserService } from 'angular-auth-oidc-client/lib/services/oidc.security.user-service';
-import { OidcSecuritySilentRenew } from 'angular-auth-oidc-client/lib/services/oidc.security.silent-renew';
-import { OidcSecurityCommon } from 'angular-auth-oidc-client/lib/services/oidc.security.common';
-
+import { OidcSecurityService } from 'angular-auth-oidc-client';
 @Injectable()
 export class JwtInterceptor implements HttpInterceptor {
   constructor(
@@ -41,7 +38,6 @@ export class JwtInterceptor implements HttpInterceptor {
         let modifiedRequest;
         // return next.handle(req);
         console.log(req.url)
-        debugger
         if (settings && settings.version && !req.url.includes('well-known') && !req.url.includes('https://adfs-proxy.cz.foxconn.com/')
         //  && !this.authenticationService.isGeneratingToken
         ) {
@@ -60,10 +56,6 @@ export class JwtInterceptor implements HttpInterceptor {
             default:
               return next.handle(req);
           }
-        }else{
-          // req = req.clone({
-          //   headers: req.headers.append('Access-Control-Allow-Origin','*')
-          // });
         }
 
         return next.handle(req);
