@@ -136,7 +136,38 @@ this.oidcSecurityService.getIsAuthorized().subscribe(auth => {
 > authentication related api request needs to be unmodified
 > write logic in jwt.inceptors
 
-
+**Default Oauth-Config Fields**
+```
+  DEFAULT_CONFIG = {
+            stsServer: 'https://please_set',
+            redirect_url: 'https://please_set',
+            client_id: 'please_set',
+            response_type: 'code',
+            scope: 'openid email profile',
+            hd_param: '',
+            post_logout_redirect_uri: 'https://please_set',
+            start_checksession: false,
+            silent_renew: false,
+            silent_renew_url: 'https://please_set',
+            silent_renew_offset_in_seconds: 0,
+            use_refresh_token: false,
+            ignore_nonce_after_refresh: false,
+            post_login_route: '/',
+            forbidden_route: '/forbidden',
+            unauthorized_route: '/unauthorized',
+            auto_userinfo: true,
+            auto_clean_state_after_authentication: true,
+            trigger_authorization_result_event: false,
+            log_console_warning_active: true,
+            log_console_debug_active: false,
+            iss_validation_off: false,
+            history_cleanup_off: false,
+            max_id_token_iat_offset_allowed_in_seconds: 3,
+            isauthorizedrace_timeout_in_seconds: 5,
+            disable_iat_offset_validation: false,
+            storage: typeof Storage !== 'undefined' ? sessionStorage : null,
+        };
+```
 **important links**
 [angular-oidc-client documentation](https://nice-hill-002425310.azurestaticapps.net/docs/intro)
 [oidc config fields](https://nice-hill-002425310.azurestaticapps.net/docs/documentation/configuration)
