@@ -8,7 +8,7 @@
   "start_checksession": true,
   "silent_renew": true,
   "silent_renew_url": "https://localhost:44360/silent-renew.html",
-  "silent_renew_offset_in_seconds": 300,
+  "silent_renew_offset_in_seconds": 600,
   "post_login_route": "/home",
   "forbidden_route": "/forbidden",
   "unauthorized_route": "/unauthorized",
