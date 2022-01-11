@@ -5,6 +5,7 @@ import { MatButtonModule, MatCardModule, MatCheckboxModule, MatDatepickerModule,
 import { LogoutComponent } from '../private/containers/logout/logout.component';
 import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from './material.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -12,7 +13,8 @@ import { MaterialModule } from './material.module';
   declarations: [PanelComponent,LogoutComponent, HeaderComponent],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
     
   ],
   exports:[

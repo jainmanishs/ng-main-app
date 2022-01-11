@@ -27,15 +27,15 @@
     </ng-template>
 </mat-menu>
 <button mat-button [matMenuTriggerFor]="appMenu">
-    <mat-icon>person</mat-icon> Bhavesh Prajapati
+    <mat-icon>person</mat-icon> {{userName}}
 </button>
 <mat-menu #appMenu="matMenu">
     <ng-template matMenuContent let-name="name">
-        <button (click)="logout()" mat-menu-item>
+        <!-- <button  mat-menu-item>
             <mat-icon class="iconLogin">settings </mat-icon> Settings
-        </button>
+        </button> -->
         <button (click)="logout()" mat-menu-item>
-            <mat-icon class="iconLogin">exit_to_app </mat-icon> Log off {{name}}
+            <mat-icon class="iconLogin">exit_to_app </mat-icon> Log off 
         </button>
     </ng-template>
 </mat-menu>

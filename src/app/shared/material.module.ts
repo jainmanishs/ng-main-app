@@ -24,7 +24,8 @@ import {
   MatNativeDateModule,
   MatProgressSpinnerModule,
   MatRippleModule,
-  MatSortModule
+  MatSortModule,
+  MatCommonModule
 } from '@angular/material';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
@@ -60,7 +61,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatSidenavModule,
     MatPaginatorModule,
     MatSortModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatCommonModule,
   ],
   exports: [
     MatInputModule,

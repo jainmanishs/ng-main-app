@@ -9,7 +9,7 @@ import { AuthenticationService, LoginAdfs, LogoutAdfs } from 'libs/core/src';
   styleUrls: ['./logout.component.scss']
 })
 export class LogoutComponent implements OnInit {
-  emailId = null;
+  userName:string = null;
   constructor(
     private store: Store,
     private router: Router,
@@ -19,7 +19,7 @@ export class LogoutComponent implements OnInit {
 
   ngOnInit() {
   
-    this.emailId=this.authService.getUpn();
+    this.userName=this.authService.getUserName();
   }
 
   

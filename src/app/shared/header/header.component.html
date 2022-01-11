@@ -6,10 +6,13 @@
         </div>
         <app-logout></app-logout>
     </mat-toolbar-row>
-    <mat-toolbar-row>
+    <mat-toolbar-row  *ngIf="headerBreadcrumbs">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Material Management Views</li>
+            <li  class="breadcrumb-item"><a routerLink="/app1">App 1</a></li>
+            <li  class="breadcrumb-item"><a routerLink="/app2">App 2</a></li>
+
+            <!-- <li  class="breadcrumb-item"><a href="#">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Material Management Views</li> -->
           </ol>
    </mat-toolbar-row>
 </mat-toolbar>

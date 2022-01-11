@@ -1,7 +1,8 @@
-<app-logout></app-logout>
-<app-header></app-header>
+<!-- <app-logout></app-logout> -->
+<app-header [headerBreadcrumbs] = "true" ></app-header>
+
 <p class="center">dashboard works!</p>
-<app-nav class="center"></app-nav>
+<!-- <app-nav class="center"></app-nav> -->
 <div class="center space  display-flex">
     <button class="margin" (click)="getDashboardData()" color="primary" mat-raised-button>
         Get Dashboard Settings

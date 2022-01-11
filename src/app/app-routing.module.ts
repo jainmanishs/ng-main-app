@@ -20,7 +20,7 @@ export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'dashboard',
+    redirectTo: 'home',
     data: {
       breadcrumb: 'login'
     }
@@ -44,7 +44,7 @@ export const routes: Routes = [
       preload: true,
       breadcrumb: 'dashboard'
     },
-    //canActivate:[AuthorizationGuard]
+    canActivate:[AuthorizationGuard]
   }
 
  ];

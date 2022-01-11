@@ -97,16 +97,10 @@ import { SharedModule } from './shared/shared.module';
     FormsModule,   
     ReactiveFormsModule,   
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatRippleModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatCommonModule,
-    MatProgressSpinnerModule
 
   ],
   providers: [ /*  {
