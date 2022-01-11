@@ -1,4 +1,4 @@
-<div class="right-align border" >
+<!-- <div class="right-align border" >
     <div *ngIf="emailId">
         UserName : {{emailId}}
     </div>
@@ -7,5 +7,35 @@
             Logout
         </button>
     </div>
-    
-</div>
+</div> -->
+<button mat-button [matMenuTriggerFor]="plantSelector">
+    <mat-icon class="iconLogin">business</mat-icon> LS51
+</button>
+<mat-menu #plantSelector="matMenu">
+    <ng-template matMenuContent let-name="name">
+        <button mat-menu-item><mat-radio-button value="1">LS51</mat-radio-button></button>
+        <button mat-menu-item><mat-radio-button value="2">CS03</mat-radio-button></button>
+    </ng-template>
+</mat-menu>
+<button mat-button [matMenuTriggerFor]="langMenu">
+    <mat-icon>language</mat-icon> English
+</button>
+<mat-menu #langMenu="matMenu">
+    <ng-template matMenuContent let-name="name">
+        <button mat-menu-item><mat-radio-button value="1">English</mat-radio-button></button>
+        <button mat-menu-item><mat-radio-button value="2">French</mat-radio-button></button>
+    </ng-template>
+</mat-menu>
+<button mat-button [matMenuTriggerFor]="appMenu">
+    <mat-icon>person</mat-icon> Bhavesh Prajapati
+</button>
+<mat-menu #appMenu="matMenu">
+    <ng-template matMenuContent let-name="name">
+        <button (click)="logout()" mat-menu-item>
+            <mat-icon class="iconLogin">settings </mat-icon> Settings
+        </button>
+        <button (click)="logout()" mat-menu-item>
+            <mat-icon class="iconLogin">exit_to_app </mat-icon> Log off {{name}}
+        </button>
+    </ng-template>
+</mat-menu>

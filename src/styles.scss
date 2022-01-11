@@ -1,4 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+$purple : #673ab7;
+$white  : #ffffff;
+$yellow : #ffea00;
 
+.mat-primary{background: $purple!important;}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+%shadow{box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);}
+a{text-decoration: none;}
+.header-top{
+    @extend %shadow;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .header-inner{
+        display: flex;
+        width: 50%;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.breadcrumb {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    list-style: none;
+    color: $white ;
+    .breadcrumb-item{
+        a{
+            color: $white;
+            &:hover{
+                color:$yellow;
+            }
+        }
+        + .breadcrumb-item{
+            &::before{
+                display: inline-block;
+                padding-right: 0.5rem;
+                padding-left: 0.5rem;
+                content: "/";
+            }
+        }
+    }
+}
