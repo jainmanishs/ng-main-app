@@ -8,11 +8,11 @@
     </mat-toolbar-row>
     <mat-toolbar-row  *ngIf="headerBreadcrumbs">
         <ol class="breadcrumb">
-            <li  class="breadcrumb-item"><a routerLink="/app1">App 1</a></li>
-            <li  class="breadcrumb-item"><a routerLink="/app2">App 2</a></li>
 
-            <!-- <li  class="breadcrumb-item"><a href="#">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Material Management Views</li> -->
-          </ol>
+            <li *ngFor="let hBreadcrumbs of headerBreadcrumbs" class="breadcrumb-item">
+                <a routerLink="{{hBreadcrumbs.navigateUrl}}">{{hBreadcrumbs.navigateTitle}}</a>
+            </li>
+          
+        </ol>
    </mat-toolbar-row>
 </mat-toolbar>

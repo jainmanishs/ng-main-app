@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { HeaderBreadcrumb } from '../models/common-models';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() headerBreadcrumbs = null;
+  @Input() headerBreadcrumbs:HeaderBreadcrumb[] = null;
   constructor() { }
 
   ngOnInit() {

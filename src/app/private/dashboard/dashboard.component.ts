@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { ConfigService } from '@ngx-config/core';
 import { AuthenticationService, AuthenticationState } from 'libs/core/src';
 import { OidcConfigService } from 'angular-auth-oidc-client';
+import { HeaderBreadcrumb } from 'src/app/shared/models/common-models';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,7 +17,6 @@ import { OidcConfigService } from 'angular-auth-oidc-client';
 })
 export class DashboardComponent implements OnInit {
  
-  
   isLoading
   constructor(
     private http: HttpClient,
@@ -86,6 +86,22 @@ export class DashboardComponent implements OnInit {
     this.authService.renewTokenSilently();
 
   }
+
+  getHeaderBreadcrumbs(): HeaderBreadcrumb[] {
+    const headerBreadcrumbs: HeaderBreadcrumb[] = [
+      {
+        navigateTitle: "App 1",
+        navigateUrl: "/app1"
+      },
+      {
+        navigateTitle: "App 2",
+        navigateUrl: "/app2"
+      }
+    ]
+
+    return headerBreadcrumbs;
+  }
+
   demonstrateTokenRenewal() {
     const self = this;
     setInterval(function () {
