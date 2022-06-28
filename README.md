@@ -84,5 +84,5 @@ To update specific project/module git repository.
    
    
    
-Refrence Article
+Reference Article
 https://medium.com/disney-streaming/combining-multiple-angular-applications-into-a-single-one-e87d530d6527
